@@ -9,7 +9,6 @@ import sys
 
 # Complete the matchingStrings function below.
 def matchingStrings(strings, queries):
-    result = []
     hash_table = {}
     for _str in strings:
         if _str in hash_table:
@@ -18,10 +17,9 @@ def matchingStrings(strings, queries):
             hash_table[_str] = 1
     for query in queries:
         if query in hash_table:
-            result.append(hash_table[query])
+            yield hash_table[query]
         else:
-            result.append(0)
-    return result
+            yield 0
 
 
 if __name__ == '__main__':
