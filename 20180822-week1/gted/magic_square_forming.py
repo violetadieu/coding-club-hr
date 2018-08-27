@@ -23,13 +23,12 @@ def formingMagicSquare(s):
     for ms in magic_squares:
         diff_sum = 0
         for s_row, ms_row in zip(s, ms):
-            for s_e, ms_e in zip(s_row, ms_row):
-                diff_sum += abs(s_e - ms_e)
+            diff_sum += sum(list(map(lambda x: abs(x[0] - x[1]), zip(s_row, ms_row))))
         if diff_sum < min_diff_sum:
             min_diff_sum = diff_sum
     return min_diff_sum
 
-
+    
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
