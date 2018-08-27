@@ -4,6 +4,10 @@ import random
 import re
 import sys
 
+"""
+ hackerrank : Sparse Arrays
+ https://www.hackerrank.com/challenges/sparse-arrays/problem
+"""
 # Complete the matchingStrings function below.
 def matchingStrings(strings, queries):
     # extract keys without duplication
