@@ -16,7 +16,6 @@ def solve(numberList):
       isFibo = True
       pass
 
-    isFibo = False
     while (n >= second):
       if (n == second):
         isFibo = True
