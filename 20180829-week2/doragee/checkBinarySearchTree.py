@@ -34,6 +34,28 @@ node1.setRight(node4)
 node5 = node(6)
 node2.setLeft(node5)
 
-if __name__ == '__main__':
+
+def checkBinarySearchTree(root):
+  return check(root, root.getLeft(), root.getRight())
   
-  print(root.getLeft().getData())
+def check(data, left, right):
+  if left.getData() is None and right.getData() is None:
+    return True
+
+  resultLeft = False
+  if left.getData():
+    resultLeft = data.getData() > left.getData()
+    if resultLeft is True:
+      return check(left.getData(), left.getLeft(), left.getRight())
+  
+  resultRight = False
+  if right.getData():
+    resultRight = data.getData() < right.getData()
+    if resultRight is True:
+      return check(right.getData(), right.getLeft(), right.getRight())
+  
+  return False
+  
+if __name__ == '__main__':
+  print(checkBinarySearchTree(root))
+    
