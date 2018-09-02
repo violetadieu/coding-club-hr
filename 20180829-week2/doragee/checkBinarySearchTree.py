@@ -34,25 +34,39 @@ node1.setRight(node4)
 node5 = node(6)
 node2.setLeft(node5)
 
+# root = node(7)
+
+# node1 = node(5)
+# node2 = node(9)
+# root.setLeft(node1)
+# root.setRight(node2)
+
+# node3 = node(3)
+# node4 = node(6)
+# node1.setLeft(node3)
+# node1.setRight(node4)
+
+# node5 = node(8)
+# node2.setLeft(node5)
 
 def checkBinarySearchTree(root):
   return check(root, root.getLeft(), root.getRight())
   
 def check(data, left, right):
-  if left.getData() is None and right.getData() is None:
+  if left is None and right is None:
     return True
 
   resultLeft = False
   if left.getData():
     resultLeft = data.getData() > left.getData()
     if resultLeft is True:
-      return check(left.getData(), left.getLeft(), left.getRight())
+      return check(left, left.getLeft(), left.getRight())
   
   resultRight = False
   if right.getData():
     resultRight = data.getData() < right.getData()
     if resultRight is True:
-      return check(right.getData(), right.getLeft(), right.getRight())
+      return check(right, right.getLeft(), right.getRight())
   
   return False
   
